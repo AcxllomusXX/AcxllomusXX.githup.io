@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="DATOS_PERSONALES">DATOS PERSONALES</label><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular" name="celular" required><br><br>
+
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" required><br><br>
+
+        <label for="estatura">Estatura:</label>
+        <input type="number" id="estatura" name="estatura" required><br><br>
+
+
+
+        <label for="estado_civil">Estado civil:</label>
+        <select id="estado_civil" name="estado_civil" required>
+            <option value="soltero">SOLTERO(A)</option>
+            <option value="casado">CASADO(A)</option>
+            <option value="divorciado">DIVORCIADO(A)</option>
+            <option value="unido">UNIDO(A)</option>
+            <option value="viudo">VIUDO(A)</option>
+            <option value="separado">SEPARADO(A)</option>
+        </select>
+        <br><br>
+
+
+
+        <label for="dependientes">Dependientes:</label>
+        <select id="dependiente" name="Dependiente" required>
+            <option value="0" selected>0</option>
+            <option value="1" selected>1</option>
+            <option value="2" selected>2</option>
+            <option value="3" selected>3</option>
+            <option value="4" selected>4</option>
+            <option value="5" selected>5 o mas</option>
+        </select>
+        
+        <br><br>
+
+         <label for="Residencia">Residencia:</label>
+        <select id="residencia" name="residencia" required>
+            <option value="alquilada">ALQUILADA</option>
+            <option value="conjunto">CONJUNTO(Familiares)</option>
+            <option value="hipoteca">HIPOTECADA</option>
+            <option value="otros">OTROS</option>
+            <option value="v_padres">VIVE CON LOS PADRES</option>
+            <option value="propia">PROPIA</option>
+        </select>
+
+        <br><br>     
+        
+        <label for="anos_residencia">Años de vivir en la residencia:</label>
+        <input type="number" id="anos_residencia" name="anos_residencia" required><br><br>
+        <br><br>
+
+        
+        <label for="horario_trabajo">Horario de trabajo:</label><br>
+
+        <input type="radio" id="fijo" name="tipo_horario" value="fijo" required>
+        <label for="fijo">Fijo</label>
+        <br>
+        <label for="hora_entrada">Hora de entrada:</label>
+        <input type="time" id="hora_entrada" name="hora_entrada">
+
+        <select id="merideem" name="merideem"required>
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+        </select>
+        <br>
+
+        <label for="hora_salida">Hora de salida:</label>
+        <input type="time" id="hora_salida" name="hora_salida">
+        <select id="merideem" name="merideem"required>
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+        </select>
+        <br>
+        
+        <input type="radio" id="rotativo" name="tipo_horario" value="rotativo" required>
+        <label for="rotativo">Horario Rotativo</label><br><br><br><br>
+      
+    
+
+
+    <!--
+    combo 2
+    -->
+    <label for="provincia">Provincia</label>
+        <select id="provincia" name="provincia" required>
+            <option value="">Selecciona una Provincia</option>
+            <option value="panama">PANAMA</option>
+            <option value="panama_O">PANAMA OESTE</option>
+            <option value="cocle">COCLE</option>
+            <option value="chiriqui">CHIRIQUI</option>
+            <option value="bocas_del_toro">BOCAS DEL TORO</option>
+            <option value="colon">COLON</option>
+            <option value="herrera">HERRERA</option>
+            <option value="los_santos">LOS SANTOS</option>
+            <option value="veraguas">VERAGUAS</option>
+            <option value="darrien">DARIEN</option>
+            <option value="kuna_yala">KUNA YALA</option>
+            <option value="comarca_ngabe_bugle">COMARCA NGABE-BUGLE</option>
+            <option value="comarca_embera_wounan">COMARCA EMBERA-WOUNAN</option>
+            <option value="comarca_naso_tjerdi">COMARCA Tjer DI</option>
+
+
+        </select>
+
+        <br></BR>
+
+        <label for="distritos">Distrito:</label>
+        <select id="distritos" name="distritos" required>
+          <option value="">Selecciona un distrito</option>
+        </select>
+        
+      
+        <!-- Script para actualizar el select de corregimientos dinámicamente -->
+        <script>
+          const distritos = {
+            "panama": ["PANAMA", "CHIMAN", "CHEPO", "BALBOA", "SAN MIGUELITO", "TABOGA"],
+            "panama_O": ["ARRAIJAN","CHAME","CAPIRA","LA CHORRERA","SAN CARLOS","VERACRUZ"],
+            "cocle": ["PENONOME","ANTÓN","CORONADO","NATA","OLA","AGUADULCE","LA PINTADA","PENONOMÉ"],
+            "chiriqui": ["DAVID", "BUGABA", "BOQUETE", "BOQUERÓN", "RENACIMIENTO", "DOLEGA", "GUALACA", "REMEDIOS", "SAN FÉLIX","BARU", "TOLÉ", "ALANJE","SAN LORENZO","TIERRAS ALTAS"],
+            "bocas_del_toro": ["BOCAS DEL TORO", "CHANGUINOLA", "CHIRIQUI GRANDE", "ALMIRANTE"],
+            "colon": ["COLON", "CHAGRES", "DONOSO", "PORTOBELO", "SANTA ISABEL", "SANTA RITA", "SABANITAS"],
+            "herrera": ["CHITRE", "LAS MINAS", "LOS POZOS", "OCU", "PARITA", "PESÉ", "SANTA MARÍA", "MONAGRILLO"],
+            "los_santos": ["LAS TABLAS", "GUARARÉ", "LAS MINAS", "MACARACAS", "PEDASÍ", "PESÉ", "PUEBLO NUEVO", "TONOSÍ"],
+            "veraguas": ["SANTIAGO", "ATALAYA", "CALOBRE", "CAÑAZAS", "LA MESA", "LAS PALMAS", "MONTIJO", "RÍO DE JESÚS", "SAN FRANCISCO", "SANTA FE", "SONÁ"],
+            "darien": ["CHEPIGANA", "PINOGANA","SANTA FE"],
+            "kuna_yala": ["SIN DISTRITO"],
+            "comarca_ngabe_bugle":["BESIKO", "KANKINTU", "KUSAPIN", "MIRONO", "MUNA", "DOLE DUIMA", "ÑURUM", "JIRONDAI", "SANTA CATALINA O CALOVEBORA"],
+            "comarca_embera_wounan":["CEMACO","SAMBU"],
+            "comarca_naso_tjerdi":["NASO Tjer DI"],
+            
+          };
+      
+          const provinciaSelect = document.getElementById("provincia");
+          const distritosSelect = document.getElementById("distritos");
+      
+          provinciaSelect.addEventListener("change", function() {
+            const selectedProvincia = this.value;
+            const listadistritos = distritos[selectedProvincia] || [];
+      
+            // Limpia las opciones anteriores
+            distritosSelect.innerHTML = '';
+      
+            // Agrega una opción por defecto
+            const defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "Selecciona un distrito";
+            distritosSelect.appendChild(defaultOption);
+      
+            // Agrega los distritos correspondientes
+            listadistritos.forEach(corr => {
+              const option = document.createElement("option");
+              option.value = corr.toLowerCase().replace(/\s+/g, '_');
+              option.textContent = corr;
+              distritosSelect.appendChild(option);
+            });
+          });
+        </script>
+
+        <br><br> 
+
+    <!--    
+parte de corregimientos
+-->
+<label for="corregimiento">Corregimiento:</label>
+<select id="corregimiento" name="corregimiento" required>
+  <option value="">Selecciona un corregimiento</option>
+</select>       
+
+<script>
+    const corregimientos = {    
+      "panama": ["24 DE DICIEMBRE","ALCALDE DÌAZ","ANCÒN","BETHANIA","BELLA VISTA","CALIDONIA","CAIMITILLO","CHILIBRE","CURUNDU","DON BOSCO","EL CHORRILLO","HERNESTO CORDOBA CAMPOS","JUAN DIAZ","LAS CUMBRES","LAS CUMBRES","LAS CUMBRES","LAS GARZAS","LAS MAÑANITAS","PACORA","PARQUE LEFEVRE","PEDREGAL","PUEBLO NUEVO","RIO ABAJO","SAN FELIPE","SAN FELIPE", "SAN FRANCISCO","SAN MARTIN", "SANTA ANA","TOCUMEN"],
+      "chiman":["BRUJAS","CHIMAN","GONZALO VASQUEZ","PASIGA","UNION SANTEÑA"],
+      "chepo":["CAÑITA","CHEPILLO","EL LLANO","LAS MARGARITAS","CHEPO","SANTA CRUZ DE CHININA","TORTI","MADUGANDI"],
+      "balboa":["LA ENSENADA","LA ESMERALDA","LA GUINEA","PEDRO GONZALES","SABOGA","SAN MIGUEL"],
+      "san_miguelito":["AMELIA DENIS DE ICAZA","BELISARIO PORRAS","JOSE DOMINGO ESPINAR","BELISARIO FRIAS","ARNULFO ARIAS","MATEO ITURRALDE","OMAR TORRIJOS","RUFINA ALFARO","VICTORIANO LORENZO"],
+      "taboga":["OTOQUE OCCIDENTE","OTOQUE ORIENTE","TABOGA"],
+
+
+      "arraijan":["ARRAIJAN (cab)","BURUNDA","CERRO SILVESTRE","JUAN DEMOSTENES AROSEMENA","NUEVO EMPERADOR","VERACRUZ","VISTA ALEGRE","SANTA CLARA","VACAMONTE"],
+      "chame ":["BEJUCO","BUENOS AIRES","CABUYA","CHAME (cab)","CHICÀ","EL LÌBANO","LAS LAJAS","NUEVA GORGONA","PUNTA CHAME","SAJALICES","SORA"],
+      "capira":["CAIMITO","CAPIRA (cab)","CAMPANA","CERMEÑO","CIRI DE LOS SOTOS","CIRI GRANDE","EL CACAO","LA TRINIDAD","LAS OLLAS ARRIBA","LIDICE","VILLA CARMEN","SANTA ROSA","VILLA ROSARIO"],
+      "la_chorrera":["AMADOR","AROSEMENA","BARRIO BALBOA","BARRIO COLON","EL ARADO","EL COCO","FEUILLET","GUADALUPE","HERRERA","HURTADO","ITURRALDE","LA REPRESA","LOS DIAZ","MENDOZA","OBALDIA","PLAYA LEONA","PUERTO CAIMITO","SANTA ROSA"],
+      "san_carlos":["EL ESPINO","EL HIGO","LA ERMITA","LA LAGUNA","LAS UVAS","SAN CARLOS (cab)","SAN JOSE","LOS LLANITOS","GUAYABITO"],
+
+
+      "almirante":["ALMIRANTE","BAJO CULUBRE","BARRIO FRANCES","CUACHERO","CEIBA","MIRAFLORES","NANCE DE RISCO", "VALLE DE AGUAS ARRIBA","VALLE DE RISCO"],
+      "bocas_del_toro":["BASTIMENTOS","BOCAS DEL TORO (cab)","BOCA DEL DRAGO","PUNTA LAUREL","TIERRA OSCURA","SAN CRISTOBAL"],
+      "changuinola":["CHANGUINOLA (cab)","BARRIADA 4 DE ABRIL","BARRANCO ADENTRO","COCHIGRO","EL EMPALME","EL SILENCIO","FINCA 4","FINCA 6","FINCA 12","FINCA 30","FINCA 51","FINCA 60","FINCA 66", "GUABITO","LA GLORIA","LA MESA","LAS DELICIAS","LAS TABLAS"],
+      "chiriqui_grande":["BAJO CEDRO","CHRIQUI GRANDE (cab)","MIRAMAR","PUNTA PEÑA","PUNTA ROBALO","RAMABALA"],
+
+
+      "alanje":["ALANJE (cab)","DIVALÁ","EL TEJAR","GUARUMAL","NUEVO MEXICO","QUEREVALO","SANTO TOMAS","PALO GRANDE"],
+      "baru":["BACO","LIMONES","PROGRESO","PUERTO ARMUELLES (cab)","RODOLFO AGUILAR DELGADO","EL PALMAR","MANACA"],
+      "boqueron":["BAGALA","BOQUERON (cab)","CORDILLERA","GUABALA","GUAYABAL","PARAISO","PEDREGAL","TIJERAS"],
+      "boquete":["ALTO BOQUETE","BAJO BOQUETE (cab)","CALDERA","JARAMILLO","LOS NARANJOS","PALMIRA"],
+      "bugaba":["ASERRIO DE GARICHÉ","BUGABA","EL BONGO","GOMEZ","LA CONCEPCION","LA ESTRELLA","SAN ANDRES","SANTA MARTA","SANTA ROSA","SANTO DOMINGO","SORTOVA","SOLANO","SAN ISIDRO"],
+      "david":["DAVID (cab)","BIJAGUAL","COCHEA","CHIRIQUI","GUACA","LAS LOMAS","PEDREGAL","SAN CARLOS","DAVID ESTE","DAVID SUR","SAN PABLO NUEVO","SAN PABLO VIEJO"],
+      "dolega":["DOLEGA (cab)","LOS ANASTACIOS","POTRERILLOS","TINAJAS","LOS ALGARROBOS",,"POTRERILLOS ABAJO","ROVIRA","DOS RIOS"],
+      "gualaca":["GUALACA (cab)","HORNITO","LOS ANGELES","PAJA DE SOMBRE","RINCON"],
+      "remedios":["EL NANCITO","EL PORVENIR","EL PUERTO","REMEDIOS (cab)","SANTA LUCIA"],
+      "renacimiento":["BREÑON","CAÑAS GORDAS","DOMINICAL","MONTE LIRIO","PLAZA DE CAISAN","RIO SERENO","SANTA CRUZ","SANTA CLARA"],
+      "san_felix":["LAS LAJAS (cab)","LAS LAJAS ADRENTRO","JUAY","SAN FELIX","SANTA CRUZ"],
+      "san_lorenzo":["HORCONCITOS (cab)","BOCA DE MONTE","BOCA CHICA","SAN JUAN","SAN LORENZO"],
+      "tierras_altas":["VOLCAN (cab)","CERRO PUNTA","CUESTA DE PIEDRA"," NUEVA CALIFORNIA","PASO ANCHO"],
+      "tole":["TOLÈ (cab)","BELLA VISTA","CASCO VIEJO","EL CRISTO","JUSTO FIDEL PALACIOS","LAJAS DE TOLE","POTRERP DE CAÑA","QUEBRADA DE PIEDRA","VELADERO"],
+
+       
+      "aguadulce":["AGUADULCE (cab)","BARRIOS UNIDOS","EL CRISTO","EL ROBLE","EL HATO DE SAN JUAN DE DIOS","POCRÌ","PUEBLOS UNIDOS","VIRGEN DEL CARMEN"],
+      "anton":["ANTON (cab)","EL CHIRU","EL VALLE","RIO HATO","SAN JUAN DE DIOS","CABALLERO","CABUYA","SANTA RITA","JUAN DIAZ","EL RETIRO"],
+      "la_pintada":["LA PINTADA (cab)","EL HARINO","EL POTRERO","LAS LOMAS","LLANO GRNADE","PIEDRAS GORDAS","LLANO NORTE"],
+      "nata":["NATA DE LOS CABALLEROS (cab)","GUZMAN","TOZA","CAPELLANIA","EL CAÑO","LAS HUACAS","VILLARREAL"],
+      "ola":["EL COPE","OLA (cab)","EL PALMAR","EL PICACHO","LA PAVA,"],
+      "penonome":["PENONOME (cab)","CAÑAVERAL","COCLE","EL COCO","COCLE","CHIGUIRI ARRIBA","PAJONAL","RIO GRANDE","RIO INDIO","TOABRE","TULU","BOCA DE TUCUE","CANDELARIO OVALLE","LAS MINAS","RIECITO","SAN MIGUEL","VICTORIANO LORENZO"],
+
+
+      "colon":["COLON (cab)","BARRIO NORTE","BARRIO SUR","CATIVA","BUENA VISTA","CRISTOBAL","CIRICITO","CRISTOBAL ESTE","ESCOBAL","LIMON","NUEVA PROVIDENCIA","PUERTO PILON","SABANITAS","SALAMANCA","SAN JUAN","SANTA ROSA"],
+      "chagres":["NUEVO CHAGRES (cab)","LA ENCANTADA","EL GUABO","ACHIOTE","PALMAS BELLAS","PIÑA","SALUD"],
+      "donoso":["MIGUEL DE LA BORDA (cab)","COCLE DEL NORTE","EL GUASIMO","RIO INDIO","GOBEA"],
+      "portobelo":["PORTOBELO (cab)","CACIQUE","ISLA GRANDE","MARIA CHIQUITA","GARROTE"],
+      "santa_isabel":["PALENQUE (cab)","CUANGO","MIRAMAR","NOMBRE DE DIOS","PALENQUE","PALMIRA","PLAYA CHIQUITA","SANTA ISABEL","VIENTO FRIO"],
+      "omar_torrijos_herrera":["COCLESITO (cab)","SAN JOSE DEL GENERAL","SAN JUAN DE TURBE","NUEVA ESPERANZA"],
+
+
+      "chepigana":["LA PALMA (cab)","CAMOGANTI","CHEPIGANA","GARACHINE","JAQUE","PUERTO PIÑA","SAMBU","SETEGANTI","TAIMATI","TUCUTI"],
+      "pinogana":["EL REAL DE SANTA MARIA(cab)"," BOCA DE CUPE","METETI","PAYA","PINOGANA","PUCURO","YAPE","YAVIZA","WARGANDI"],
+      "santa_fe":["SANTA FE (cab)","AGUA FRIA","CUCUNATI","RIO CONGO","RIO CONGO ARRIBA", "RIO IGLESIAS","ZAPALLAL"],
+
+
+      "chitre":["CHITRE (cab)","LA ARENA","LLANO BONITO","MONAGRILLO","SAN JUAN BAUTISTA"],
+      "las_minas":["LAS MINAS (cab)","CHEPO","CHUMICAL","EL TORO","LEONES","QUEBRADA DEL ROSARIO"," QUEBRADA EL CIPRIAN"],
+      "los_pozos":["LOS POZOS (cab)","EL CAPURI","EL CALABACITO","EL CEDRO","LA ARENA","LA PITALOZA","LAS LLANAS","LOS CERRITOS","LOS CERROS DE PAJA"],
+      "ocu":["OCU (cab)","CERRO LARGO","EL TIJERA","ENTRADERO DEL CASTILLO","LOS LLANOS","LLANO GRNADE","MENCHACA","PEÑAS CHATAS"],
+      "parita":["PARITA (cab)","CABUYA","LOS CASTILLOS","LLANO DE LA CRUZ","PARIS","PORTOBELILLO","PORTUGA"],
+      "pese":["PESE (cab)","EL BARRERO","EL PEDREGOSO","EL CIRUELO", "EL PAJARO","LAS CABRAS","RINCON HONDO","SABANAGRANDE"],
+      "santa_maria":["SANTA MARIA (cab)","CHUPAMPA","EL LIMON","EL RINCON","LOS CANELOS"],
+
+
+      "guarare":["GUARARE (cab)","EL ESPINAL","EL HATO","EL MACANO","GUARARE ARRIBA","LA ENEA","LA PASERA","LAS TRANCAS","LLANO ABAJO","PERALES"],
+      "las_tablas":["LAS TABLAS (cab)","BAJO CORRAL","BAYANO","EL CARATE","EL COCAL","EL MANANTIAL","EL MUÑOZ","EL PEDREGOSO","EL SESTEADERO","LA LAJA","LA MIEL","LA PALMA","LA TIZA","LAS PALMITAS","LAS TABLAS ABAJO","NUARIO","PALMIRA","PEÑA BLANCA","RIO HONDO","SAN JOSE","SAN MIGUEL","SANTO DOMINGO","VALLE RICO","VALLERIQUITO"],
+      "los_santos":["LA VILLA DE LOS SANTOS (cab)","EL EJIDO","EL GUASIMO","LA COLORADA","LA ESPIGADILLA","LAS CRUCES","LAS GUABAS","LOS ANGELES","LOS OLIVOS","LLANO LARGO","SABANAGRANDE","SANTA ANA","TRES QUEBRADAS","VILLA LOURDES","AGUA BUENA"],
+      "macaracas":["MACARACAS (cab)","BAHIA HONDA","BAJOS DE GUERA","COROZAL","CHUPA","EL CEDRO","ESPINO AMARILLO","LA MESA","LAS PALMAS","LLANO DE PIEDRAS","MACARACAS","MOGOLLON"],
+      "pedasi":["PEDASI (cab)","LOS ASIENTOS","MARIABE","ORIA ARRIBA","PURIO"],
+      "Pocri":["POCRI (cab)","EL CAÑAFISTULO","LA LAJAMINA","PARAISO","PARITILLA","POCRI"],
+      "tonosi":["TONOSI (cab)","CAÑAS","EL BEBEDERO","ALTOS DE GUERRA","CAMBUTAL","EL CACAO","EL PAPAYO","EL CORTEZO","FLORES","GUANICO","ISLA DE CAÑAS","LA TRONOSA"],
+
+
+      "atalaya":["ATALAYA (cab)","EL BARRITO","LA CARRILLO","LA MESA","LA MONTAÑUELA","SAN ANTONIO"],
+      "calobre":["CALOBRE (cab)","BARNIZAL","CHITRA","EL COCLA","EL POTRERO","LA LAGUNA","LA RAYA DE CALOBRE","LA TETILLA","LA YEGUADA","LAS GUIAS","MONJARAS","SAN JOSE"],
+      "cañazas":["CAÑAZAS (cab)","CERRO DE PLATA"," EL AROMILLO","EL PICADOR","LAS CRUCES","LOS VALLES","SAN JOSE","SAN MARCELO"],
+      "la_mesa":["LA MESA (cab)","BISVALLES","BORO","EL HIGO","LA MESA","LOS MILAGROS","LLANO GRNDE","SAN BARTOLO"],
+      "las_palmas":["LAS PALMAS (cab)","CERRO DE CASA", "COROZAL","EL MARIA","EL PRADO","EL RINCON","LAS PALMAS","LOLA","MANUEL E. AMADOR TERRERO","PIXVAE","PUERTO VIDAL","SAN MARTIN DE PORRES","VIGUI","ZAPOTILLO"],
+      "montijo":["MONTIJO (cab)","CEBACO","COSTA HERMOSA","GOBERNADORA","LA GARCEANA","LEONES","PILON","UNION DEL NORTE"],
+      "rio_de_jesus":["RIO DE JESUS (cab)","14 DE NOVIEMBRE","LAS HUACAS","LOS CASTILLOS", "UTIRA"],
+      "san_francisco":["SAN FRANCISCO (cab)","CORRAL FALSO","LOS HATILLOS","REMANCE","SAN JUAN","SAN JOSE"],
+      "santa_fe":["SANTA FE (cab)","CALOVEBORA","EL ALTO","EL CUAY","EL PANTANO","GATUNCITO","RIO LUIS","RUBEN CANTU"],
+      "santiago":["SANTIAGO (cab)","LA COLORADA","CANTO DEL LLANO","CARLOS SANTANA AVILA","EDWIN FABREGA","LA PEÑA","LA RAYA DE SANTA MARIA","LOS ALGARROBOS","NUEVO SANTIAGO","PONUGA","SAN MARTIN DE PORRES","SAN PEDRO DEL ESPINO","SANTIAGO ESTE","SANTIAGO SUR","RODRIGO LUQUE", "URRACA"],
+      "sona":["SONA (cab)","BAHIA HONDA","CALIDONIA","CATIVE","EL MARAÑON","GUARUMAL","HICACO","LA SOLEDAD","LA TRINCHERA","QUEBRADA DE ORO","RIO GRANDE","RODEO VIEJO","SONA"],
+
+      "cemaco":["CIRILO GUAYNORA","LAJAS BLANCAS","MANUEL ORTEGA"],
+      "sambu":["JINGURUDO","RIO SABALO"],
+
+      "sin_distrito":["AILIGANDI","NARGANA","PUERTO OBALDIA","TUBUALA"],
+      "naso_tjer_di":["BONYIK","SAN SAN DURI","EL TERIBE"],
+
+      "besiko":["SOLOY (cab)","BOCA DE BALSA","CERRO BANCO","CERRO PATENO","CAMARON ARRIBA","EMPLANADA DE CHORCHA","NAMNONI","NIBA"],
+      "kankintu":["BISIRA (cab)","CALANTE","KANKINTU","GUORONI","MUNUNI","PIEDRA ROJA","TOLOTE"],
+      "kusapin":["KUSAPIN (cab)","BAHIA AZUL","CAÑAVERAL","RIO CHIRIQUI","TOBOBE"],
+      "mirono":["HATO PILON (cab)","CASCABEL","HATO COROTU","HATO CULANTRO","HATO JOBO","HATO JULI","QUEBRADA DE LORO","SALTO DUPI"],
+      "muna":["CHICHICA (cab)","ALTO CABALLERO","BAKAMA","CERRO PUERCO","KRUA","MARACA","NIBRA","PEÑA BLANCA","ROKA","SITIO PRADO","UMANI","DIKO","KIKARI","DIKERI","MREENI"],
+      "dole_duima":["CERRO IGLESIAS(cab)","HATO CHAMI","JADEBERI","LAJERO","SUSAMA"],
+      "ñurum":["BUENOS AIRES(cab)","AGUA DE SALUD","ALTO DE JESUS","CERRO PELADO","EL BALE","EL PAREDON","EL PIRO","GUAYABITO","GUIBALE","EL PEÑON","EL PIRO Nº2"],
+      "jirondai":["SAMBOA (cab)","BURI","GUARIVIARA","MAN CREEK", "TUWAI"],
+      "santa_catalina_o_calovebora":["SANTA CATALINA (cab)","ALTO BILINGUE","LOMA YUCA","SAN PEDRITO","VALLE BONITO"],
+
+
+
+    };
+
+    const distritoSelect = document.getElementById("distritos");
+    const corregimientoSelect = document.getElementById("corregimiento");
+
+    distritoSelect.addEventListener("change", function() {
+      const selectedDistrito = this.value;
+      const listaCorregimientos = corregimientos[selectedDistrito] || [];
+
+      // Limpia las opciones anteriores
+      corregimientoSelect.innerHTML = '';
+
+      // Agrega una opción por defecto
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "";
+      defaultOption.textContent = "Selecciona un corregimiento";
+      corregimientoSelect.appendChild(defaultOption);
+
+      // Agrega los corregimientos correspondientes
+      listaCorregimientos.forEach(corr => {
+        const option = document.createElement("option");
+        option.value = corr.toLowerCase().replace(/\s+/g, '_');
+        option.textContent = corr;
+        corregimientoSelect.appendChild(option);
+      });
+    });
+  </script>
+    <br><br>
+
+    
+
+    
+        <label for="barriada">Barriada</label>
+        <input type="text" id="barriada" name="barriada" required>
+        <br><br>
+        <label for="calle">Calle:</label>
+        <input type="text" id="calle" name="calle" required>
+        <br><br><br><br>
+
+
+
+        <label for="casa">Domicilio:</label><br>
+
+        <input type="radio" id="tipo_domicilio" name="tipo_domicilio" value="domicilio" required>
+        <label for="domicilio">Casa:</label>
+        <br>
+        <select id="numeracion_Casa" name="numeracion_casa"required>
+            <option value="s/n">S/N</option>
+            <option value="n/a">N/A</option>
+            <input type="text" id="numero_casa" name="numero_casa" placeholder="# de Casa">
+        </select>
+
+        <br><br>
+        <input type="radio" id="tipo_domicilio" name="tipo_domicilio" value="domicilio" required>
+        <label for="domicilio">Edificio:</label>
+        <br>
+        <select id="numeracin_edificio" name="numeracion_edificio"required>
+            <option value="s/n">S/N</option>
+            <option value="n/a">N/A</option>
+            <input type="text" id="numeracion_edificio" name="numeracion_edificio" placeholder="# de Piso">
+            <input type="text" id="numeracion_Ap" name="numeracion_Ap" placeholder="# de Apartamento">
+
+        </select>
+        <br><br>
+        <label for="cerca_de">Cerca de:</label>
+        <input type="text" id="cerca_de" name="cerca_de"required>
+
+        
+
+       
+
+
+
+
+</form>
+ 
+<br><br><br>
+
+
+<input type="submit" value="Enviar">
+
+
